@@ -16,7 +16,7 @@ export class EventsGateway implements OnGatewayConnection {
         setInterval(() => {
             this.server.emit("greet", "hello world");
 
-        }, 5000);
+        }, 15000);
     }
 
     @SubscribeMessage("events")
