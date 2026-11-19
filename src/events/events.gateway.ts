@@ -1,9 +1,11 @@
 import { OnGatewayConnection, SubscribeMessage, WebSocketGateway, WebSocketServer } from "@nestjs/websockets";
 import { Server } from "socket.io";
 
+
+
 @WebSocketGateway({
     cors: {
-        origin: '*',
+        origin: "*"
     },
 })
 export class EventsGateway implements OnGatewayConnection {
