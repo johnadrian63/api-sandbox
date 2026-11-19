@@ -3,9 +3,7 @@ import { Server } from "socket.io";
 
 @WebSocketGateway({
     cors: {
-        origin: [
-            "https://angularsandbox.vercel.app"
-        ],
+        origin: '*',
     },
 })
 export class EventsGateway implements OnGatewayConnection {
