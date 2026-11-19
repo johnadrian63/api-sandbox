@@ -9,4 +9,11 @@ export class AppController {
     public getIndex(): string {
         return this.appService.getValue();
     }
+
+    @Get("/json")
+    public getJsonResponse() {
+        return {
+            "data": "JSON Data"
+        }
+    }
 }
