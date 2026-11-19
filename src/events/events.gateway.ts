@@ -5,7 +5,7 @@ import WebSocket, { WebSocketServer as WsServer } from 'ws';
     cors: {
         origin: "*"
     },
-    transports: ["websocket"]
+    // transports: ["websocket"]
 })
 export class EventsGateway implements OnGatewayConnection {
     @WebSocketServer()
@@ -25,13 +25,15 @@ export class EventsGateway implements OnGatewayConnection {
                 peer.send(outgoing);
             }
         }
+
+        console.log(">>>");
     }
 
     public handleConnection(client: any, ...args: any[]) {
         console.log("connected");
 
         setInterval(() => {
-            this.server.emit("greet", "hello world");
+            this.server.emit("greet", "hello worldss");
 
         }, 5000);
     }
