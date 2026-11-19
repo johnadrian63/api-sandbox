@@ -13,10 +13,10 @@ export class EventsGateway implements OnGatewayConnection {
     public handleConnection(client: any, ...args: any[]) {
         console.log("connected");
 
-        setTimeout(() => {
+        setInterval(() => {
             this.server.emit("greet", "hello world");
 
-        }, 400);
+        }, 5000);
     }
 
     @SubscribeMessage("events")
