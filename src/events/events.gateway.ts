@@ -14,8 +14,10 @@ export class EventsGateway implements OnGatewayConnection {
         console.log("connected");
 
         setInterval(() => {
-            this.server.emit("greet", "hello world");
-
+            this.server.emit(JSON.stringify({
+                event: "greet",
+                data: "hello world",
+            }));
         }, 15000);
     }
 
